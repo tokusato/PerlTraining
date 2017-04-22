@@ -1,0 +1,55 @@
+#!/bin/csh 
+
+#mkdir dis
+
+foreach dis (3.0  3.1  3.2  3.3  3.4  3.5  3.6  3.7  3.8  3.9  4.0  4.1  4.2  4.3  4.4  4.5  4.6  4.7  4.8  4.9  5.0  5.1  5.2  5.3  5.4  5.5  5.6  5.7  5.8  5.9  6.0 )
+
+mkdir $dis
+
+cd $dis
+
+cp ../../MCP3.0.inp MCP$dis.inp
+cp ../../mcp3.0.sh mcp$dis.sh
+
+sed -i s/3.0/$dis/g mcp$dis.sh
+
+cd ..
+
+#cp MCPlin.inp dis/MCPlin$dis.inp
+#cp mcplin.sh dis/mcplin$dis.sh
+
+end
+
+
+
+
+
+
+#foreach dis (3.0  3.1  3.2  3.3  3.4  3.5  3.6  3.7  3.8  3.9  4.0  4.1  4.2  4.3  4.4  4.5  4.6  4.7  4.8  4.9  5.0  5.1  5.2  5.3  5.4  5.5  5.6  5.7  5.8  5.9  6.0 )
+
+#mkdir $dis
+#sed -i "s/MCPlin/MCPlin$dis/" mcplin$dis.sh
+
+#mv mcplin$dis.sh $dis
+#mv MCPlin$dis.inp $dis
+
+
+#cd ..
+#./program.pl > dis/coord$dis
+#cd dis
+#end
+
+#cd ..
+#I3-unitに戻る
+
+#coordディレクトリ内の座標を読み込む
+#cd coord
+#perl read.pl
+#cd ..
+#I3-unitに戻る
+
+
+
+
+
+
